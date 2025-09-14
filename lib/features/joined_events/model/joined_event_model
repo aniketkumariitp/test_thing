@@ -1,0 +1,105 @@
+class JoinedEventModel {
+  String? message;
+  List<Eventdata>? eventdata;
+
+  JoinedEventModel({this.message, this.eventdata});
+
+  JoinedEventModel.fromJson(Map<String, dynamic> json) {
+    message = json['message'];
+    if (json['Eventdata'] != null) {
+      eventdata = <Eventdata>[];
+      json['Eventdata'].forEach((v) {
+        eventdata!.add(Eventdata.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = {};
+    data['message'] = message;
+    if (eventdata != null) {
+      data['Eventdata'] = eventdata!.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
+}
+
+class Eventdata {
+  final String? userId;
+  final String? eventId;
+  final String? eventBanner;
+  final String? eventName;
+  final String? eventDescription;
+  final int? eventTotalseat;
+  final int? eventBookedseats;
+  final String? eventLocation;
+  final String? eventMapLocation;
+  final int? ticketPrice;
+  final String? contactNumber;
+  final DateTime? startDate;
+  final DateTime? endDate;
+  final String? name;
+  final String? profilePic;
+  final String? joinedAt;
+
+  Eventdata({
+    this.userId,
+    this.eventId,
+    this.eventBanner,
+    this.eventName,
+    this.eventDescription,
+    this.eventTotalseat,
+    this.eventBookedseats,
+    this.eventLocation,
+    this.eventMapLocation,
+    this.ticketPrice,
+    this.contactNumber,
+    this.startDate,
+    this.endDate,
+    this.name,
+    this.profilePic,
+    this.joinedAt,
+  });
+
+  factory Eventdata.fromJson(Map<String, dynamic> json) {
+    return Eventdata(
+      userId: json['userId'],
+      eventId: json['eventId'],
+      eventBanner: json['eventBanner'],
+      eventName: json['eventName'],
+      eventDescription: json['eventDescription'],
+      eventTotalseat: json['eventTotalseat'],
+      eventBookedseats: json['eventBookedseats'],
+      eventLocation: json['eventLocation'],
+      eventMapLocation: json['eventMapLocation'],
+      ticketPrice: json['ticketPrice'],
+      contactNumber: json['contactNumber'],
+      startDate: json['startDate'] != null ? DateTime.tryParse(json['startDate']) : null,
+      endDate: json['endDate'] != null ? DateTime.tryParse(json['endDate']) : null,
+      name: json['name'],
+      profilePic: json['profilePic'],
+      joinedAt: json['joinedAt'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+     final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['userId'] = userId;
+    data['eventId'] = eventId;
+    data['eventBanner'] = eventBanner;
+    data['eventName'] = eventName;
+    data['eventDescription'] = eventDescription;
+    data['eventTotalseat'] = eventTotalseat;
+    data['eventBookedseats'] = eventBookedseats;
+    data['eventLocation'] = eventLocation;
+    data['eventMapLocation'] = eventMapLocation;
+    data['ticketPrice'] = ticketPrice;
+    data['contactNumber'] = contactNumber;
+    data['startDate'] = startDate?.toIso8601String();
+    data['endDate'] = endDate?.toIso8601String();
+    data['name'] = name;
+    data['profilePic'] = profilePic;
+    data['joinedAt'] = joinedAt;
+    return data;
+  }
+}

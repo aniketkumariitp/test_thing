@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "852202901814",
+    "project_id": "hood-happen-v2",
+    "storage_bucket": "hood-happen-v2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852202901814:android:0e9390e8d579f052ce2397",
+        "android_client_info": {
+          "package_name": "com.ankit.hoodhappen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVfveFX3Q0GHWopX3_ACxqN03C4rw41CE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
